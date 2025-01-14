@@ -1,0 +1,51 @@
+
+ <h1>List of Users</h1>
+    <table id="usertable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Mobile</th>
+                <th>Activity</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each users}}
+                <tr>
+                    <td>{{this.name}}</td>
+                    <td>{{this.email}}</td>
+                    <td>{{this.mobile}}</td>
+                    <td onclick="fetchalltasks({{this.id}})" style="cursor: pointer;">fetch all tasks</td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    <div class="pagination">
+        <button id="prev-page" onclick="prev({{currentPage}})">Previous</button>
+        <span id="page-info">Page {{currentPage}} of {{totalPages}} </span>
+        <button id="next-page" onclick="next({{currentPage}},{{totalPages}})">Next</button>
+    </div>
+
+    <script>
+        function prev(page) {
+            if (page > 1) {
+                window.location.href = `api/v1/users/showusers?page=${page - 1}`;
+            }
+            else{
+                alert("You are on the first page");
+            }
+        }
+
+        function fetchalltasks(id){
+            window.location.href = `/api/v1/tasks/fetchalltask/${id}`;
+        }
+
+        function next(page,totalPages) {
+            console.log('hii')
+            if(page < totalPages){
+                window.location.href = `/users?page=${page + 1}`;
+            }else{
+                alert("You are on the last page");
+            }
+        }
+    </script>

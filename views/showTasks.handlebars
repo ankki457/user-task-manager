@@ -1,0 +1,31 @@
+<h1>List of Tasks</h1>
+    <table id="users-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Task</th>
+                <th>Status</th>
+                <th>update</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each tasks}}
+                <tr>
+                    <td>{{this.user.name}}</td>
+                    <td>{{this.task_name}}</td>
+                    <td>
+                        {{this.task_type}}
+                    </td>
+                        <td style="cursor: pointer;" onclick="update({{this.id}},`{{this.user.name}}`)">Update</td>
+
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+
+<script>
+    function update(id,username){
+        console.log('hii');
+        window.location.href = `/api/v1/tasks/updatetask/${id}?username=${username}`;
+    }
+</script>

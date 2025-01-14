@@ -1,0 +1,62 @@
+<style>
+    .addusercontainer {
+        width: 100%;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .addusercontainer h1 {
+        text-align: center;
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .addusercontainer label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+    .addusercontainer input {
+        width: 100%;
+        padding: 8px;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+    }
+
+    .addusercontainer button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 1rem;
+    }
+
+    .addusercontainer button[type="submit"]:hover {
+        background-color: #45a049;
+    }
+</style>
+
+<div class="addusercontainer">
+    <h1>Add User</h1>
+    <form action="/api/v1/users/createuser" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="mobile">Mobile:</label>
+        <input type="text" id="mobile" name="mobile" required>
+        <button type="submit">Add User</button>
+    </form>
+</div>
+<script src="/validation.js"></script>

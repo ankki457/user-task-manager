@@ -1,0 +1,83 @@
+<style>
+    .form-container {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-container h1 {
+        text-align: center;
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .formcontainer {
+        margin-bottom: 15px;
+    }
+
+    .formcontainer label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .formcontainer select,
+    .formcontainer input[type="text"] {
+        width: 100%;
+        padding: 8px;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    .formcontainer select {
+        height: 36px; /* Match input height for consistency */
+    }
+
+    .formcontainer .btn {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 1rem;
+    }
+
+    .formcontainer .btn:hover {
+        background-color: #45a049;
+    }
+</style>
+
+<div class="formcontainer">
+    <h1>Add Task</h1>
+    <form action="/api/v1/tasks/assigntask" method="POST">
+        <div class="formcontainer">
+            <label for="user">User:</label>
+            <select id="user" name="user_id" class="taskinput" required>
+                {{#each users}}
+                    <option value="{{this.id}}">{{this.name}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <div class="formcontainer">
+            <label for="task_name">Task Name:</label>
+            <input type="text" id="task_name" name="task_name" class="taskinput" required>
+        </div>
+        <div class="formcontainer">
+            <label for="task_type">Task Type:</label>
+            <select id="task_type" name="task_type" class="taskinput" required>
+                <option value="Pending">Pending</option>
+                <option value="Done">Done</option>
+            </select>
+        </div>
+        <button type="submit" class="btn">Add Task</button>
+    </form>
+</div>
