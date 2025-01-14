@@ -69,7 +69,7 @@ PORT=3000
    ```sql
    CREATE DATABASE trainee_task;
    SHOW DATABASES;
-   GRANT ALL PRIVILEGES ON trainee_task.* TO 'root'@'localhost' IDENTIFIED BY 'Ankit@457';
+   GRANT ALL PRIVILEGES ON trainee_task.* TO 'root'@'localhost' IDENTIFIED BY 'Your Password';
    FLUSH PRIVILEGES;
    ```
 
@@ -127,8 +127,7 @@ The application will be running at `http://localhost:3000`.
 - For further customization, you can modify the controllers and views as needed.
   ![Screenshot (116)](https://github.com/user-attachments/assets/07af2b12-7036-4a4d-bf15-15b3377f53ba)
 ![Screenshot (117)](https://github.com/user-attachments/assets/17714d7d-8903-44c3-8abb-fb0688cf4c6f)
-![Screenshot (118)](https://github.com/user-attachm![Screenshot (119)](https://github.com/user-attachments/assets/06ebf515-e621-44b6-b83f-777695eef41d)
-ents/assets/57591eb4-60bf-4263-ab20-b693dff4e1d3)
+![Screenshot (119)](https://github.com/user-attachments/assets/06ebf515-e621-44b6-b83f-777695eef41d)
 ![Screenshot (121)](https://github.com/user-attachments/assets/db43ddac-4a89-4216-b218-f5e6c470501b)
 ![Screenshot (120)](https://github.com/user-attachments/assets/b1a22dd8-0a50-405a-b4fc-04901f903081)
 ![Screenshot (122)](https://github.com/user-attachments/assets/a670db73-8e89-49de-9789-1b9d04b94359)
